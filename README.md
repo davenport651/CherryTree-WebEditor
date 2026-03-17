@@ -37,7 +37,14 @@ Default file permissions should mean these are writable.
 
 The API requires PHP to be installed and configured on your server. It should work with most standard PHP installations (PHP 7.0+).
 
-### 4. Test the Installation
+### 4. Edit script to disable caching
+
+On line 8 of ./res/scripts3.js, make the following change to ensure edits are reloaded properly:
+```
+    iframe.src = file_path.split('?')[0] + '?v=' + Date.now();
+```
+
+### 5. Test the Installation
 
 Visit: `https://domain.tld/notes/kowalski.htm`
 
